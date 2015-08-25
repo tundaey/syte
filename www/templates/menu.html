@@ -1,0 +1,71 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+        <ion-content has-bouncing="false" scroll="false" class="menu-outer">
+            <div class="row menu-top-options">
+                <div class="col col-top">
+                    <ion-list>
+                        <ion-item class="heading-item" menu-close ui-sref="app.view1">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- We need a wrapper with width set for the preload image directive -->
+                                    <div class="user-image-outer">
+                                        <pre-img ratio="_1_1" helper-class="rounded-image">
+<!--
+                                            <img class="user-image" ng-src="https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg" spinner-on-load>
+-->
+                                            <img class="user-image" ng-src="img/mcfly.jpg" spinner-on-load>
+                                        </pre-img>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="greeting">John Doe</h1>
+                                    <p class="message">Project Manager</p>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.view2">
+                            <i class="menu-icon icon ion-home"></i>
+                            <h2 class="menu-text">Dashboard</h2>
+                        </ion-item>
+                        <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.view3">
+                            <i class="menu-icon icon ion-person-stalker"></i>
+                            <h2 class="menu-text">Collaborators</h2>
+                        </ion-item>
+                        <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.view4">
+                            <i class="menu-icon icon ion-ribbon-b"></i>
+                            <h2 class="menu-text">Projects</h2>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+            <div class="row menu-bottom-options">
+                <div class="col col-bottom">
+                    <ion-list>
+                        <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.view5">
+                            <i class="menu-icon icon ion-person-add"></i>
+                            <h2 class="menu-text">Invite Collaborators</h2>
+                        </ion-item>
+                        <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.view6">
+                            <i class="menu-icon icon ion-ios-settings-strong"></i>
+                            <h2 class="menu-text">Settings</h2>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

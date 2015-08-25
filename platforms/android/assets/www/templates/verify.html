@@ -1,0 +1,35 @@
+<ion-view view-title="Verify your account" class="theme-color">
+  <ion-content>
+      <div class="verify-header">
+          <h3>We sent a code to {{number}}</h3>
+          <p>Enter the code below to verify your account and start using the service</p>
+          <form>
+              <div class="item-input-inset">
+                  <label class="item-input-wrapper">
+                      <input type="tel" ng-model="code.verification_code" placeholder="Verification code">
+                  </label>
+                  <button class="button button-stable button-small" ng-click="verify()" ng-disabled="!code.verification_code">
+                      verify
+                  </button>
+              </div>
+           </form>
+
+          <a>Didn't receive any SMS? Click to try again</a>
+      </div>
+
+
+
+     <!-- <div class="list">
+
+          <div class="item item-input-inset">
+              <label class="item-input-wrapper">
+                  <input type="text" placeholder="Verification code">
+              </label>
+              <button class="button button-small">
+                  Submit
+              </button>
+          </div>
+
+      </div>-->
+  </ion-content>
+</ion-view>

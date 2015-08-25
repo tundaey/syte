@@ -1,0 +1,68 @@
+/* Empty. Add your own CSS if you like */
+.background.scroll-content{
+    background: url('../img/KDJVR24G33.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    z-index: 2;
+}
+
+.menu{
+    color: rgb(133, 134, 141);
+
+}
+
+.home-label{
+    color: white;
+    font-family: myFirstFont;
+    text-align: center;
+}
+
+.app-name{
+    color: white;
+    margin-bottom: 300px;
+    text-align: center;
+    font-family: mySecondFont;
+}
+
+.auth-name{
+    color: white;
+    margin-bottom: 150px;
+    text-align: center;
+    font-family: mySecondFont;
+}
+
+.auth-pages{
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+
+.landing-page{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+}
+
+.landing-buttons{
+    margin-top: 50px;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url('../lib/ionic/fonts/Choplin-ExtraLight-DEMO.otf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: mySecondFont;
+    src: url('../lib/ionic/fonts/Choplin-Medium-DEMO.otf');
+    font-weight: bold;
+}
+
+.logo{
+
+}

@@ -1,0 +1,92 @@
+//colors
+$color_ebony_clay_approx: rgb(43, 47, 62);
+$white: white;
+$color_wild_sand_approx: #f5f5f5;
+
+//fonts
+$font_0: myFirstFont;
+$font_1: mySecondFont;
+$font_2: Raleway;
+
+//urls
+$url_0: url(/img/KDJVR24G33.jpg);
+$url_1: url(/lib/ionic/fonts/Choplin-ExtraLight-DEMO.otf);
+$url_2: url(/lib/ionic/fonts/Choplin-Medium-DEMO.otf);
+
+.menu {
+  background-color: $color_ebony_clay_approx;
+}
+.menu-background {
+  background-color: $color_ebony_clay_approx;
+}
+.home-label {
+  color: $white;
+  font-family: $font_0;
+  text-align: center;
+}
+.app-name {
+  color: $white;
+  margin-bottom: 300px;
+  text-align: center;
+  font-family: $font_1;
+}
+.auth-name {
+  color: $white;
+  margin-bottom: 150px;
+  text-align: center;
+  font-family: $font_1;
+}
+.auth-pages {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.trial-page {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.landing-page {
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.landing-buttons {
+  margin-top: 50px;
+}
+@font-face {
+  font-family: $font_0;
+  src: $url_1;
+  font-weight: bold;
+}
+@font-face {
+  font-family: $font_1;
+  src: $url_2;
+  font-weight: bold;
+}
+.verify-header {
+  padding: 70px;
+  background-color: $color_wild_sand_approx;
+  background-color: $color_ebony_clay_approx;
+  color: $white;
+  text-align: center;
+  h3 {
+    color: $color_wild_sand_approx;
+  }
+}
+.theme-color {
+  background-color: $color_ebony_clay_approx;
+}
+body {
+  font-family: $font_2;
+}
+.background.scroll-content {
+  background: $url_0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  z-index: 2;
+}

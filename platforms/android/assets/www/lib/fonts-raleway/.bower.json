@@ -1,0 +1,53 @@
+{
+  "name": "raleway-fonts",
+  "version": "0.0.3",
+  "homepage": "https://github.com/williamcanin/raleway-fonts",
+  "authors": [
+    "William Canin <william.costa.canin@gmail.com>"
+  ],
+  "description": "Raleway Web Font Package by Google Fonts",
+  "keywords": [
+    "raleway",
+    "raleway-bold",
+    "raleway-extrabold",
+    "raleway-heavy",
+    "raleway-light",
+    "raleway-extralight",
+    "raleway-medium",
+    "raleway-regular",
+    "raleway-semibold",
+    "raleway-thin",
+    "webfonts",
+    "web",
+    "fonts"
+  ],
+  "licenses": [
+    {
+      "covers": "software",
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    },
+    {
+      "covers": "fonts",
+      "type": "OFL-1.1",
+      "url": "http://scripts.sil.org/OFL"
+    }
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.3",
+    "commit": "571cee6f6e55f7a807f0d56761dfa043f43e006b"
+  },
+  "_source": "git://github.com/williamcanin/fonts-raleway.git",
+  "_target": "~0.0.3",
+  "_originalSource": "fonts-raleway",
+  "_direct": true
+}
