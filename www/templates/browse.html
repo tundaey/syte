@@ -1,5 +1,20 @@
-<ion-view view-title="Browse">
+<ion-view view-title="Projects">
+    <ion-nav-buttons side="right">
+        <button class="button button-royal" ui-sref="app.new"><i class="icon ion-android-add"></i></button>
+    </ion-nav-buttons>
   <ion-content>
-    <h1>Browse</h1>
+      <ion-list can-swipe="listCanSwipe">
+          <ion-item ng-repeat="item in items" class="item-button-right" ui-sref="app.single">
+              <h2>{{item.title}}</h2>
+              <p>{{item.description}}</p>
+              <p><small>Last updated {{item.update}} mins ago</small></p>
+              <ion-option-button class="button-positive" ng-click="share(item)">
+                  Share
+              </ion-option-button>
+              <ion-option-button class="button-info" ng-click="edit(item)">
+                  Edit
+              </ion-option-button>
+              </ion-item>
+          </ion-list>
   </ion-content>
 </ion-view>

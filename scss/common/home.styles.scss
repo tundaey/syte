@@ -2,16 +2,26 @@
 $color_ebony_clay_approx: rgb(43, 47, 62);
 $white: white;
 $color_wild_sand_approx: #f5f5f5;
+$grey: #999;
 
 //fonts
 $font_0: myFirstFont;
 $font_1: mySecondFont;
-$font_2: Raleway;
+$font_2: 'Raleway', sans-serif;
 
 //urls
 $url_0: url(/img/KDJVR24G33.jpg);
+$img_list: url(/img/HJJUM5FFU9.jpg);
 $url_1: url(/lib/ionic/fonts/Choplin-ExtraLight-DEMO.otf);
 $url_2: url(/lib/ionic/fonts/Choplin-Medium-DEMO.otf);
+$url_raleway_light: url(/lib/raleway/fonts/light/raleway-light-woff);
+$url_raleway_regular: url(/lib/raleway/fonts/light/raleway-regular-woff);
+$url_raleway_medium: url(/lib/raleway/fonts/light/raleway-medium-woff);
+$url_raleway_semibold: url(/lib/raleway/fonts/light/raleway-semibold-woff);
+$url_raleway_bold: url(/lib/raleway/fonts/light/raleway-bold-woff);
+$url_raleway_extrabold: url(/lib/raleway/fonts/light/raleway-extrabold-woff);
+
+
 
 .menu {
   background-color: $color_ebony_clay_approx;
@@ -20,9 +30,11 @@ $url_2: url(/lib/ionic/fonts/Choplin-Medium-DEMO.otf);
   background-color: $color_ebony_clay_approx;
 }
 .home-label {
-  color: $white;
   font-family: $font_0;
   text-align: center;
+  margin-bottom: 100px;
+  margin-top: 10px;
+  color: $grey;
 }
 .app-name {
   color: $white;
@@ -31,17 +43,17 @@ $url_2: url(/lib/ionic/fonts/Choplin-Medium-DEMO.otf);
   font-family: $font_1;
 }
 .auth-name {
-  color: $white;
-  margin-bottom: 150px;
+  color: $royal;
   text-align: center;
   font-family: $font_1;
 }
 .auth-pages {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   width: auto;
 }
+
 .trial-page {
   margin-top: 20px;
   margin-left: auto;
@@ -84,9 +96,119 @@ body {
   font-family: $font_2;
 }
 .background.scroll-content {
-  background: $url_0 no-repeat;
+ /* background: $url_0 no-repeat;
   background-size: cover;
   background-position: center;
   margin: auto;
-  z-index: 2;
+  z-index: 2;*/
+}
+
+.nav-bar-block, .bar {
+  background-color: inherit !important;
+}
+
+
+.navigation{
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid $border-color;
+}
+
+.margin-menu{
+  margin-top: 50px;
+}
+
+.forms{
+  border-left: $white;
+  border-right: $white;
+  border-top: $white;
+}
+
+.auth-link{
+  margin-top: 50px;
+  color: $royal;
+  float: right;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", sans-serif;
+}
+
+.forgot-link{
+  //margin-top: 30px;
+  color: $grey;
+  margin-left: 120px;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", sans-serif;
+}
+
+.forgot-link a:link{
+  color: white;
+}
+
+.project_title{
+  color: brown;
+}
+
+.project_details{
+  font-size: 12px;
+}
+.new_project_buttons{
+  margin-left: 10px;
+}
+
+.new_project_button{
+  margin-top: 10px;
+}
+
+.button_create{
+  margin-top: 10px;
+ margin-right: 20px;
+}
+
+
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url($url_raleway_light) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url($url_raleway_regular) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url($url_raleway_medium) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url($url_raleway_semibold) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Raleway Bold'), local('Raleway-Bold'), url($url_raleway_bold) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Raleway ExtraBold'), local('Raleway-ExtraBold'), url($url_raleway_extrabold) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }

@@ -51,7 +51,7 @@ angular.module('syte.factory',[])
         return LSAPI;
     }])
 
-    .factory('UserFactory', ['$http', function($http){
+    .factory('UserFactory', ['$http', 'AuthFactory', function($http, AuthFactory){
         var UserAPI = {
             register: function(data){
                 return $http.post(base + '/register', data);
@@ -71,17 +71,64 @@ angular.module('syte.factory',[])
 
             login: function(user){
                 return $http.post(base + '/login', user);
+            },
+
+            logout: function(){
+                AuthFactory.deleteAuth();
             }
         }
 
         return UserAPI;
-    }]).factory('FirebaseFactory', ['$firebaseAuth', '$firebaseArray', 'FBURL','LSFactory','$rootScope',
-            function($firebaseAuth, $firebaseArray, FBURL, LSFactory, $rootScope){
-                return {
-                    auth: function(){
-                        var FBRef = new Firebase(FBURL);
-                        var authObj = $firebaseAuth(FBRef);
-                        return authObj.$authWithCustomToken(LSFactory.get('token'));
+    }]).factory('AuthFactory', ['LSFactory', '$q',
+            function(LSFactory){
+                var userkey = 'user';
+                var tokenKey = 'token';
+                var AuthAPI = {
+                    isLoggedIn: function(){
+                        return this.getUser() === null ? false : true;
+                    },
+
+                    getUser: function(){
+                        return LSFactory.get(userkey);
+                    },
+
+                    setUser: function(user){
+                        return LSFactory.set(userkey, user)
+                    },
+
+                    getToken: function(){
+                        LSFactory.get(tokenKey);
+                    },
+
+                    setToken: function(token){
+                        LSFactory.set(tokenKey, token);
+                    },
+
+                    deleteAuth: function(){
+                        LSFactory.delete(userkey);
+                        LSFactory.delete(tokenKey);
                     }
                 }
+                return AuthAPI;
+
             }])
+    .factory('TokenInterceptor', ['$q','AuthFactory', function($q, AuthFactory){
+        return {
+            request: function(config){
+                config.headers = config.headers || {};
+                var token = AuthFactory.getToken();
+                var user = AuthFactory.getUser();
+                if(token && user){
+                    config.headers['X-access-token'] = token;
+                    config.headers['X-key'] = user.id;
+                    config.headers['Content-type'] = "application/json"
+                }
+
+                return config || $q.when(config);
+            },
+
+            response: function(response){
+                return response || $q.when(response)
+            }
+        }
+    }])

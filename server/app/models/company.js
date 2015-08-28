@@ -15,7 +15,17 @@ var companySchema = new mongoose.Schema({
     users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     employees: {type: String},
     verified: {type: Boolean, default: false},
-    company_code: {type: Number}
+    company_code: {type: Number},
+    projects: [{
+        name: String,
+        project_type: String,
+        admins : [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+        collaborators : [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+        start_date: Date,
+        end_date: Date,
+        location: String,
+        completed: {type: Boolean, default: false}
+    }]
 });
 
 

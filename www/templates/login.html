@@ -1,37 +1,27 @@
-<ion-view>
+<ion-nav-view>
     <ion-content class="background" scroll="false">
         <div class="row">
             <div class="auth-pages">
-                <h2 class="auth-name">SyteWork</h2>
+                <h2 class="auth-name royal">Syte</h2>
+                <h4 class="home-label">collaborate and track progress in your site projects in real time</h4>
+                <form ng-submit="login()">
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Phone Number</span>
+                    <input type="text" placeholder="Phone Number" ng-model="loginData.phone_number">
+                </label>
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="loginData.password">
+                </label>
 
-
-                <div class="list list-inset">
-                    <label class="item item-input">
-                        <i class="icon ion-ios-telephone placeholder-icon"></i>
-                        <input type="tel" placeholder="Phone ">
-                    </label>
-
-                    <label class="item item-input">
-                        <i class="icon ion-locked placeholder-icon"></i>
-                        <input type="text" placeholder="Password">
-                    </label>
-                </div>
-
-                <button class="button button-full button-assertive">Login</button>
-
-
-                <div class="landing-buttons">
-
-
-                    <a ui-sref="home" class="button icon-left ion-chevron-left button-full button-calm">
-                        Back
-                    </a>
-
-                </div>
+                <button class="button button-block button-royal">Login</button>
+                </form>
+                <a class="button button-block button-stable" ui-sref="home">Signup</a>
             </div>
-
-
         </div>
 
+
+        <!--<a ui-sref="signup" class="forgot-link">Forgot Password</a>-->
+
     </ion-content>
-</ion-view>
+</ion-nav-view>

@@ -1,27 +1,36 @@
-<ion-view>
+<ion-nav-view>
     <ion-content class="background" scroll="false">
         <div class="row">
-            <div class="landing-page">
-                <h2 class="app-name">Syte</h2>
+            <div class="auth-pages">
+                <h2 class="auth-name royal">Syte</h2>
                 <h4 class="home-label">collaborate and track progress in your site projects in real time</h4>
+                <form ng-submit="signup()">
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Fullname</span>
+                    <input type="text" placeholder="Fullname" ng-model="signupData.fullname">
+                </label>
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="signupData.password">
+                </label>
 
-                <div class="landing-buttons">
-                    <a ui-sref="create" class="button button-full button-calm">
-                        Free Trial
-                    </a>
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Company Code</span>
+                    <input type="tel" placeholder="Company Code" ng-model="signupData.company_code">
+                </label>
 
-                    <a ui-sref="signup" class="button button-full button-royal">
-                        Join your team
-                    </a>
+                <label class="item item-input item-floating-label forms">
+                    <span class="input-label">Verification Code</span>
+                    <input type="tel" placeholder="Verification Code" ng-model="signupData.verification_code">
+                </label>
 
-                    <a ui-sref="login" class="button button-full button-assertive">
-                        Login
-                    </a>
-                </div>
+
+                <button class="button button-block button-royal">Signup</button>
+                </form>
+                <a class="button button-block button-stable" ui-sref="login">Login</a>
             </div>
-
-
         </div>
 
+
     </ion-content>
-</ion-view>
+</ion-nav-view>

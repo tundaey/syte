@@ -115,7 +115,12 @@ module.exports = {
                         var newUser = new User();
                         newUser.phone = phone_number;
                         newUser.verification_code = util.generateVerificationCode();
-                        twilio.sendSms({
+                        newUser.save(function(err, savedUser){
+                            company.users.push(savedUser._id);
+                            company.save();
+                            res.json({message: 'Invitation Successfully sent'})
+                        })
+                        /*twilio.sendSms({
                             to: newUser.phone,
                             from: twilio_number,
                             body: 'You have been invited to syte. Sign up with ' + newUser.verification_code + ' and company code ' + company.company_code
@@ -131,7 +136,7 @@ module.exports = {
                                     res.json({message: 'Invitation Successfully sent'})
                                 })
                             }
-                        })
+                        })*/
 
                     }
                 })

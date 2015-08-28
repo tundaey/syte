@@ -1,0 +1,66 @@
+<ion-view view-title="New Project">
+  <ion-nav-buttons side="right">
+    <button class="button button-royal" ui-sref="app.new"><i class="icon ion-android-done-all"></i></button>
+  </ion-nav-buttons>
+  <ion-content>
+      <div class="list list-inset">
+        <h5 class="project_title">Project name and description</h5>
+        <label class="item item-input">
+          <input type="text" placeholder="Give the project a name">
+        </label>
+      </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Add a description or details">
+      </label>
+    </div>
+
+    <div class="list list-inset">
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Type of Project
+        </div>
+        <select>
+          <option>Residential Low Rise</option>
+          <option>Residential High Rise</option>
+          <option>Office/Commercial</option>
+          <option>Factory/Warehouse</option>
+          <option>Road/Bridge/Infrastructure</option>
+          <option selected>Hospital</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+    </div>
+    <div class="new_project_buttons">
+      <button class="button icon ion-android-person" ui-sref="app.editAdmin"></button>
+      <button class="button icon ion-android-people" ui-sref="app.addCollab"></button>
+      <button class="button icon ion-location"></button>
+      <button class="button icon ion-calendar"></button>
+      <button class="button icon ion-ios-calendar"></button>
+    </div>
+
+
+    <div class="list list-inset">
+      <h5 class="project_title">Working with clients on this project? </h5>
+      <p class="project_details">Syte lets you hide certain posts from people you invite as clients. You can turn this on
+      to start choosing what clients see, even if you are not ready to invite clients yet</p>
+
+      <li class="item item-toggle">
+        Yes, turn on client access
+        <label class="toggle toggle-assertive">
+          <input type="checkbox">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+      </li>
+
+
+    </div>
+
+
+  </ion-content>
+</ion-view>

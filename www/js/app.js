@@ -4,121 +4,93 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('syte', ['ionic', 'syte.controllers', 'syte.factory', 'ngCordova', 'ngCordovaOauth', 'firebase'])
+angular.module('syte', ['ionic', 'syte.controllers', 'syte.factory', 'ngCordova'])
 
 .run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
 
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+          cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-
-      $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){
-          if(error === 'AUTH_REQUIRED'){
-              $state.go('create');
-          }
-      })
+      }
+      if (window.StatusBar) {
+          // org.apache.cordova.statusbar required
+          StatusBar.styleDefault();
+      }
+      /*$rootScope.$on('$stateChangeError', function () {
+          // Redirect user to our login page
+          $state.go('login');
+      });*/
   });
-}).constant('FBURL', 'https://syte.firebaseio.com/')
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
       .state('home', {
           url: '/',
-          templateUrl: 'templates/home.html'
+          templateUrl: 'templates/home.html',
+          controller: 'AuthCtrl'
       })
 
       .state('login', {
           url: '/login',
           templateUrl: 'templates/login.html',
-          controller: 'AuthCtrl',
-          resolve:{
-              'currentAuth' : ['FirebaseFactory', 'Loader', function(FirebaseFactory, Loader){
-                  Loader.showLoading('Checking Auth...');
-                  FirebaseFactory.auth().$waitForAuth;
-              }]
-          }
+          controller: 'AuthCtrl'
       })
 
       .state('signup', {
           url: '/signup',
           templateUrl: 'templates/signup.html',
-          controller: 'AuthCtrl',
-          resolve:{
-              'currentAuth' : ['FirebaseFactory', 'Loader', function(FirebaseFactory, Loader){
-                  Loader.showLoading('Checking Auth...');
-                  FirebaseFactory.auth().$waitForAuth;
-              }]
-          }
-      })
-
-      .state('create', {
-          url: '/create',
-          templateUrl: 'templates/create.html',
-          controller: 'AuthCtrl',
-          resolve:{
-              'currentAuth' : ['FirebaseFactory', 'Loader', function(FirebaseFactory, Loader){
-                  Loader.showLoading('Checking Auth...');
-                  FirebaseFactory.auth().$waitForAuth;
-              }]
-          }
-      })
-
-      .state('verify', {
-          url: '/verify',
-          templateUrl: 'templates/verify.html',
-          controller: 'AuthCtrl',
-          resolve:{
-              'currentAuth' : ['FirebaseFactory', 'Loader', function(FirebaseFactory, Loader){
-                  Loader.showLoading('Checking Auth...');
-                  FirebaseFactory.auth().$waitForAuth;
-              }]
-          }
-
-
+          controller: 'AuthCtrl'
       })
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl',
-          resolve:{
-              'currentAuth' : ['FirebaseFactory', 'Loader', function(FirebaseFactory, Loader){
-                  Loader.showLoading('Checking Auth...');
-                  FirebaseFactory.auth().$requireAuth;
-              }]
-          }
-  })
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+          controller: 'AppCtrl'
+      })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.new', {
+    url: '/new',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/new.html'
       }
     }
   })
+      .state('app.editAdmin', {
+          url: '/new',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/editAdmin.html'
+              }
+          }
+      })
+      .state('app.addCollab', {
+          url: '/new',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/new.html'
+              }
+          }
+      })
 
   .state('app.browse', {
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/browse.html',
+            controller: 'AppCtrl'
         }
       }
       })
 
   .state('app.single', {
-    url: '/playlists/:playlistId',
+    url: '/project/:projectId',
     views: {
       'menuContent': {
         templateUrl: 'templates/playlist.html'
@@ -127,4 +99,4 @@ angular.module('syte', ['ionic', 'syte.controllers', 'syte.factory', 'ngCordova'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/browse');
-});
+})
